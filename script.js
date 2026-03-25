@@ -542,6 +542,7 @@ function initializeViewMore(stories, existingArticles) {
   
   let currentVisibleCount = 6;
   let hasAddedViewLess = false;
+  let currentCategory = 'all'; // ADD THIS - FIXES THE BUTTON!
   
   // Combine stories and existing articles
   let allStories = [...stories];
@@ -558,8 +559,6 @@ function initializeViewMore(stories, existingArticles) {
     });
   }
   
-
-  
   function displayArticles(count, category = currentCategory) {
     let articlesHTML = '';
     let articlesToShow = 0;
@@ -571,7 +570,6 @@ function initializeViewMore(stories, existingArticles) {
       let storyCategory = '';
       
       if (story.isExisting) {
-        // Extract category from existing article HTML
         const tempDiv = document.createElement('div');
         tempDiv.innerHTML = story.element;
         const articleEl = tempDiv.querySelector('.article');
@@ -585,7 +583,6 @@ function initializeViewMore(stories, existingArticles) {
       }
     }
     
-    // Limit to count
     articlesToShow = Math.min(count, visibleStories.length);
     
     for (let i = 0; i < articlesToShow; i++) {
@@ -599,7 +596,6 @@ function initializeViewMore(stories, existingArticles) {
     
     articlesContainer.innerHTML = articlesHTML;
     
-    // Apply category-view class for proper styling
     if (category !== 'all') {
       articlesContainer.classList.add('category-view');
       articlesContainer.style.display = 'flex';
@@ -611,9 +607,7 @@ function initializeViewMore(stories, existingArticles) {
       articlesContainer.style.gridTemplateColumns = 'repeat(auto-fit, minmax(350px, 1fr))';
     }
     
-    // Re-initialize article modal functionality
     initializeArticleModal();
-    
     return visibleStories.length;
   }
   
@@ -662,7 +656,6 @@ function initializeViewMore(stories, existingArticles) {
     }
   }
   
-  // Function to change category
   window.changeCategory = function(category) {
     currentCategory = category;
     currentVisibleCount = 6;
@@ -671,7 +664,6 @@ function initializeViewMore(stories, existingArticles) {
     updateButtons(totalFiltered, totalFiltered);
   };
   
-  // Initial display
   const totalFiltered = displayArticles(currentVisibleCount, 'all');
   updateButtons(totalFiltered, totalFiltered);
 }
@@ -2978,9 +2970,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const competitionFilter = document.getElementById('competition');
     const sportFixtures = document.querySelectorAll('.sport-fixtures');
     
-    // Initialize PSL fixtures display - show only first 3
-    displayFixtures(PSL_FIXTURES, 'fixturesList', 3);
-    
  // Search functionality for fixtures
 const searchBar = document.querySelector('.search-bar');
 if (searchBar) {
@@ -3126,12 +3115,8 @@ if (searchBar) {
     // View More button functionality
     const viewMoreFootballBtn = document.getElementById('viewMoreFootball');
     const moreFootballFixtures = document.getElementById('moreFootballFixtures');
-    const moreFixturesContainer = moreFootballFixtures ? moreFootballFixtures.querySelector('.fixtures-list') : null;
     
-    if (viewMoreFootballBtn && moreFootballFixtures && moreFixturesContainer) {
-      // Load remaining fixtures in the "more" section
-      displayFixtures(PSL_FIXTURES.slice(3), moreFixturesContainer.id);
-      
+    if (viewMoreFootballBtn && moreFootballFixtures) {
       viewMoreFootballBtn.addEventListener('click', function() {
         const isHidden = moreFootballFixtures.classList.contains('hidden-fixtures');
         
