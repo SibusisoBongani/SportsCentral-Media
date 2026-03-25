@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sp🏟️rts Central</title>
+  <meta name="description" content="Get the latest sports news, match highlights, and insights from South Africa and beyond. Sp🏟️rts Central keeps you updated.">
+  
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Sp🏟️rts Central" />
+  <meta property="og:description" content="Get the latest sports news, match highlights, and insights from South Africa and beyond." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://goallinesportmedia.netlify.app/" />
+  <meta property="og:image" content="https://goallinesportmedia.netlify.app/images/SCM-logo.png">
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+ <!-- Standard favicon -->
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+
+<!-- Apple Touch Icon (iOS) -->
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+
+<!-- Meta for Windows -->
+<meta name="msapplication-TileColor" content="#1e3c72">
+<meta name="theme-color" content="#1e3c72">
+
+</head>
+
+<body>
+  
+  <!-- Progress Bar -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <div class="logo-section">
+        <a href="#" class="logo">
+          <span class="lightning-bolt">⚡</span>
+          Sp🏟️rts Central
+        </a>
+      </div>
+      
+      <nav>
+        <div class="search-container">
+          <input type="text" class="search-bar" placeholder="Search articles...">
+          <i class="fas fa-search search-icon"></i>
+        </div>
+        
+        <div class="category-dropdown">
+          <button class="category-btn">Category <i class="fas fa-chevron-down"></i></button>
+          <div class="category-menu">
+            <a href="#" class="category-item" data-category="all">All Sports</a>
+            <a href="#" class="category-item" data-category="football">⚽ Football</a>
+            <a href="#" class="category-item" data-category="rugby">🏉 Rugby</a>
+            <a href="#" class="category-item" data-category="cricket">🏏 Cricket</a>
+            <a href="#" class="category-item" data-category="netball">🏐 Netball</a>
+          </div>
+        </div>
+
+        <a href="#about" class="nav-link">About</a>
+        <a href="fixtures.html" class="nav-link">Fixtures</a>
+
+        <button class="theme-toggle" id="themeToggle">
+          <i class="fas fa-moon"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- Quick Stories Banner -->
+  <section class="quick-stories">
+    <div class="quick-stories-content">
+      <span class="quick-stories-label">QUICK STORIES</span>
+      <a href="#" class="quick-stories-text" id="quickStoriesLink">South Africa Ends 16-Year Wait: Bafana Bafana Clinch 2026 World Cup Slot</a>
+      <div class="quick-stories-nav">
+        <button class="quick-stories-btn prev" id="prevQuickStory" disabled>
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="quick-stories-btn next" id="nextQuickStory" disabled>
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+ <div id="quickStoriesModal" class="quick-stories-modal">
+    <div class="quick-stories-modal-content">
+        <div class="quick-stories-modal-header">
+            <h3 id="quickStoriesModalTitle">Quick Story Details</h3>
+            <button class="quick-stories-modal-close" id="quickStoriesModalClose">&times;</button>
+        </div>
+        <div class="quick-stories-modal-body">
+            <p id="quickStoriesModalContent">Loading content...</p>
+            <div class="quick-stories-modal-meta">
+                <span id="quickStoriesModalTime">Just now</span>
+                <span id="quickStoriesModalCategory">General</span>
+            </div>
+        </div>
+        <div class="quick-stories-modal-nav">
+            <button class="quick-stories-modal-btn prev" id="prevQuickStoryModal">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <span class="quick-stories-modal-counter" id="quickStoriesModalCounter">1 / 3</span>
+            <button class="quick-stories-modal-btn next" id="nextQuickStoryModal">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+</div>
+  <main>
+    <section class="articles">
+      <!-- Articles will be loaded here from Google Sheets -->
+    </section>
+
+    <!-- View More/Less Buttons Container -->
+    <div class="view-more-container" id="viewMoreContainer" style="display: flex !important; justify-content: center; margin: 2rem auto;">
+      <button class="view-more-btn" id="viewMoreBtn" style="display: inline-flex !important;">
+        <i class="fas fa-plus"></i>
+        View More Articles
+      </button>
+    </div>
+
+    <!-- Article Modal -->
+    <div id="articleModal" class="article-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 id="modalTitle"></h2>
+          <button class="modal-close" id="modalClose">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div id="modalImage"></div>
+      <div class="modal-meta" id="modalMeta"></div>
+      <!-- Removed modalExcerpt div since we're not using it -->
+      <div class="modal-full-content" id="modalFullContent"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="nav-btn prev-btn" id="prevArticleBtn">
+        <i class="fas fa-chevron-left"></i>
+        Previous Story
+      </button>
+      <button class="nav-btn next-btn" id="nextArticleBtn">
+        Next Story
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- About Section -->
+<section id="about" class="about-section">
+  <div class="about-content">
+    <h2>About SP🏟️RT CENTRAL MEDIA</h2>
+    <p>Welcome to SP🏟️RT CENTRAL MEDIA your go-to destination for everything happening in the world of sports. We are dedicated to delivering timely and engaging content, covering match reports, player signings, partnerships, and major sporting events.</p>
+    <p>We pride ourselves on providing accurate, fast, and insightful coverage, giving both casual followers and passionate supporters a reliable source for the latest updates. As the sporting landscape continues to evolve, we remain committed to capturing every key moment and sharing it with our audience.</p>
+    <p>Join us as we celebrate the excitement, drama, and passion that make sports truly unforgettable.</p>
+    
+    <div class="about-features">
+      <!-- New Meet Akhona Card (replaces Expert Analysis) -->
+      <div class="feature meet-akhona-card" id="meetAkhonaBtn">
+        <div class="akhona-avatar">
+          <i class="fas fa-user-circle"></i>
+        </div>
+        <h3>Meet Akhona Nongauza</h3>
+        <p class="akhona-title">Sports Journalist & Founder</p>
+        <p>Click to read my story <i class="fas fa-arrow-right"></i></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Akhona Modal (add this right before the footer or after the article modal) -->
+<div id="akhonaModal" class="article-modal">
+  <div class="modal-content akhona-modal-content">
+    <div class="modal-header">
+      <h2>Meet Akhona Nongauza</h2>
+      <button class="modal-close" id="akhonaModalClose">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="akhona-profile-header">
+        <div class="akhona-large-avatar">
+          <i class="fas fa-user-circle"></i>
+        </div>
+        <div class="akhona-quick-info">
+          <h3>Akhona Nongauza</h3>
+          <p class="akhona-badge">Independent Sports Journalist</p>
+          <p class="akhona-location"><i class="fas fa-map-marker-alt"></i> Johannesburg, South Africa</p>
+        </div>
+      </div>
+      
+      <div class="akhona-full-story" id="akhonaFullStory">
+        <!-- This will be populated by JavaScript -->
+      </div>
+      
+      <div class="akhona-social">
+        <h4>Connect with Akhona</h4>
+        <div class="social-links">
+          <a href="https://www.tiktok.com/@sports_bunny5?_r=1&_t=ZS-94PWB6rGeu7" target="_blank" class="social-link"><i class="fab fa-tiktok"></i> @sports_bunny5</a>
+          <a href="https://www.facebook.com/share/1XQNhoXr4e/?mibextid=wwXIfr" target="_blank" class="social-link"><i class="fab fa-facebook"></i> Facebook</a>
+          <a href="https://www.instagram.com/sports_bunny15?igsh=bm54aW45emZuMHoz&utm_source=qr" target="_blank" class="social-link"><i class="fab fa-instagram"></i> @sports_bunny15</a>
+          <a href="#" class="social-link"><i class="fas fa-envelope"></i> akhonanaledi5@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>About Sp🏟️rts Central</h4>
+        <p>Bringing you comprehensive coverage of football, rugby, cricket, and more from South Africa and beyond.</p>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#fixtures">Fixtures</a>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Contact Us</h4>
+        <div class="footer-icons">
+          <i class="fas fa-phone"></i> +27 69 444 1780
+        </div>
+        <div class="footer-icons">
+          <i class="fas fa-envelope"></i> akhonanaledi5@gmail.com
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Follow Us</h4>
+        <div class="footer-icons">
+          <a href="https://www.facebook.com/share/1XQNhoXr4e/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+          <a href="https://www.instagram.com/sports_bunny15?igsh=bm54aW45emZuMHoz&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+          <a href="https://www.tiktok.com/@sports_bunny5?_r=1&_t=ZS-94PWB6rGeu7" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="copyright">
+      &copy; 2026 Sp🏟️rts Central. All rights reserved.
+    </div>
+  </footer>
+
+
+  <!-- External JavaScript -->
+  <script src="script.js"></script>
+
+</body>
+</html>

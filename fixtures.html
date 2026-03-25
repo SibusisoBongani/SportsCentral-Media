@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SportsCentral Media - Fixtures</title>
+  <meta name="description" content="SportsCentral Media Fixtures - View upcoming match schedules for football, rugby, cricket, and netball events across South Africa.">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="SportsCentral Media - Fixtures" />
+  <meta property="og:description" content="View upcoming match schedules and fixtures for various sporting events." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://goallinesportmedia.netlify.app/fixtures.html" />
+  <meta property="og:image" content="https://goallinesportmedia.netlify.app/images/SCM-logo.png">
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- Standard favicon -->
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+
+  <!-- Apple Touch Icon (iOS) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+
+  <!-- Meta for Windows -->
+  <meta name="msapplication-TileColor" content="#1e3c72">
+  <meta name="theme-color" content="#1e3c72">
+
+</head>
+
+<body>
+  <!-- Progress Bar -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <div class="logo-section">
+        <a href="index.html" class="logo">
+          <span class="lightning-bolt">⚡</span>
+          SportsCentral Media
+        </a>
+      </div>
+      
+      <nav>
+        <div class="search-container">
+          <input type="text" class="search-bar" placeholder="Search fixtures...">
+          <i class="fas fa-search search-icon"></i>
+        </div>
+        
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html#about" class="nav-link">About</a>
+
+        <button class="theme-toggle" id="themeToggle">
+          <i class="fas fa-moon"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Breaking News Banner -->
+  <section class="breaking-news">
+    <div class="breaking-content">
+      <span class="breaking-label">BREAKING</span>
+      <a href="index.html#article25" class="breaking-text">South Africa Ends 16-Year Wait: Bafana Bafana Clinch 2026 World Cup Slot</a>
+      <span class="breaking-time">2 hours ago</span>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main>
+    <section class="fixtures-section">
+      <div class="fixtures-header">
+        <h1>Sports Fixtures</h1>
+        <p>Upcoming matches and tournament schedules</p>
+      </div>
+      
+      <div class="fixtures-controls">
+        <div class="sport-selector">
+          <label for="sportFilter">Sport:</label>
+          <select id="sportFilter">
+            <option value="all">All Sports</option>
+            <option value="football">⚽ Football</option>
+            <option value="rugby">🏉 Rugby</option>
+            <option value="cricket">🏏 Cricket</option>
+            <option value="netball">🏐 Netball</option>
+          </select>
+        </div>
+        
+        <div class="competition-selector">
+          <label for="competition">Competition:</label>
+          <select id="competition">
+            <option value="all">All Competitions</option>
+            <option value="psl">PSL</option>
+            <option value="currie-cup">Currie Cup</option>
+            <option value="super-rugby">Super Rugby</option>
+            <option value="csa">CSA T20</option>
+            <option value="netball-cup">Netball Cup</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="fixtures-container">
+        <!-- Football Fixtures -->
+        <div class="sport-fixtures" data-sport="football">
+          <h2>⚽ Football Fixtures</h2>
+          
+          <div class="competition-section">
+            <h3>Premier Soccer League</h3>
+            <div class="fixtures-list" id="fixturesList">
+              <!-- PSL Fixtures with Kaizer Chiefs -->
+              <div class="fixture-card">
+                <div class="fixture-header">
+                  <span class="date">20 Feb 2026</span>
+                  <span class="time">18:30</span>
+                  <span class="venue">FNB Stadium</span>
+                </div>
+                <div class="fixture-teams">
+                  <div class="team home">
+                    <img src="images/teams/kaizer-chiefs.png" alt="Kaizer Chiefs" class="team-logo-img">
+                    <span class="team-name">Kaizer Chiefs</span>
+                  </div>
+                  <div class="vs">VS</div>
+                  <div class="team away">
+                    <img src="images/teams/mamelodi-sundowns.png" alt="Mamelodi Sundowns" class="team-logo-img">
+                    <span class="team-name">Mamelodi Sundowns</span>
+                  </div>
+                </div>
+                <div class="fixture-status upcoming">UPCOMING</div>
+              </div>
+              
+              <div class="fixture-card">
+                <div class="fixture-header">
+                  <span class="date">25 Feb 2026</span>
+                  <span class="time">19:00</span>
+                  <span class="venue">Moses Mabhida Stadium</span>
+                </div>
+                <div class="fixture-teams">
+                  <div class="team home">
+                    <img src="images/teams/orlando-pirates.png" alt="Orlando Pirates" class="team-logo-img">
+                    <span class="team-name">Orlando Pirates</span>
+                  </div>
+                  <div class="vs">VS</div>
+                  <div class="team away">
+                    <img src="images/teams/kaizer-chiefs.png" alt="Kaizer Chiefs" class="team-logo-img">
+                    <span class="team-name">Kaizer Chiefs</span>
+                  </div>
+                </div>
+                <div class="fixture-status upcoming">UPCOMING</div>
+              </div>
+              
+              <div class="fixture-card">
+                <div class="fixture-header">
+                  <span class="date">28 Feb 2026</span>
+                  <span class="time">20:00</span>
+                  <span class="venue">Royal Bafokeng Stadium</span>
+                </div>
+                <div class="fixture-teams">
+                  <div class="team home">
+                    <img src="images/teams/kaizer-chiefs.png" alt="Kaizer Chiefs" class="team-logo-img">
+                    <span class="team-name">Kaizer Chiefs</span>
+                  </div>
+                  <div class="vs">VS</div>
+                  <div class="team away">
+                    <img src="images/teams/supersport-united.png" alt="SuperSport United" class="team-logo-img">
+                    <span class="team-name">SuperSport United</span>
+                  </div>
+                </div>
+                <div class="fixture-status upcoming">UPCOMING</div>
+              </div>
+            </div>
+            <button class="view-more-fixtures" id="viewMoreFootball">View More Fixtures</button>
+          </div>
+          
+          <div class="competition-section hidden-fixtures" id="moreFootballFixtures">
+            <h3>More PSL Fixtures</h3>
+            <div class="fixtures-list" id="moreFixturesList">
+              <!-- Additional PSL Fixtures -->
+              <div class="fixture-card">
+                <div class="fixture-header">
+                  <span class="date">24 Feb 2026</span>
+                  <span class="time">19:30</span>
+                  <span class="venue">Prince Magogo Stadium</span>
+                </div>
+                <div class="fixture-teams">
+                  <div class="team home">
+                    <img src="images/teams/polokwane-city.png" alt="Polokwane City" class="team-logo-img">
+                    <span class="team-name">Polokwane City</span>
+                  </div>
+                  <div class="vs">VS</div>
+                  <div class="team away">
+                    <img src="images/teams/magesi-fc.png" alt="Magesi FC" class="team-logo-img">
+                    <span class="team-name">Magesi FC</span>
+                  </div>
+                </div>
+                <div class="fixture-status upcoming">UPCOMING</div>
+              </div>
+              
+              <div class="fixture-card">
+                <div class="fixture-header">
+                  <span class="date">26 Feb 2026</span>
+                  <span class="time">20:00</span>
+                  <span class="venue">FNB Stadium</span>
+                </div>
+                <div class="fixture-teams">
+                  <div class="team home">
+                    <img src="images/teams/orlando-pirates.png" alt="Orlando Pirates" class="team-logo-img">
+                    <span class="team-name">Orlando Pirates</span>
+                  </div>
+                  <div class="vs">VS</div>
+                  <div class="team away">
+                    <img src="images/teams/sekhukhune-united.png" alt="Sekhukhune United" class="team-logo-img">
+                    <span class="team-name">Sekhukhune United</span>
+                  </div>
+                </div>
+                <div class="fixture-status upcoming">UPCOMING</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Rugby Fixtures -->
+        <div class="sport-fixtures" data-sport="rugby">
+          <h2>🏉 Rugby Fixtures</h2>
+          
+          <div class="competition-section">
+            <h3>Currie Cup</h3>
+            <div class="fixtures-list">
+              <div class="fixture-card">
+                <div class="fixture-header">
+                  <span class="date">18 Feb 2026</span>
+                  <span class="time">19:00</span>
+                  <span class="venue">Emirates Airline Park</span>
+                </div>
+                <div class="fixture-teams">
+                  <div class="team home">
+                    <img src="images/teams/golden-lions.png" alt="Golden Lions" class="team-logo-img">
+                    <span class="team-name">Golden Lions</span>
+                  </div>
+                  <div class="vs">VS</div>
+                  <div class="team away">
+                    <img src="images/teams/blue-bulls.png" alt="Blue Bulls" class="team-logo-img">
+                    <span class="team-name">Blue Bulls</span>
+                  </div>
+                </div>
+                <div class="fixture-status upcoming">UPCOMING</div>
+              </div>
+              
+              <div class="fixture-card">
+                <div class="fixture-header">
+                  <span class="date">19 Feb 2026</span>
+                  <span class="time">15:00</span>
+                  <span class="venue">DHL Stadium</span>
+                </div>
+                <div class="fixture-teams">
+                  <div class="team home">
+                    <img src="images/teams/western-province.png" alt="Western Province" class="team-logo-img">
+                    <span class="team-name">Western Province</span>
+                  </div>
+                  <div class="vs">VS</div>
+                  <div class="team away">
+                    <img src="images/teams/sharks.png" alt="Sharks" class="team-logo-img">
+                    <span class="team-name">Sharks</span>
+                  </div>
+                </div>
+                <div class="fixture-status upcoming">UPCOMING</div>
+              </div>
+              
+              <div class="fixture-card">
+                <div class="fixture-header">
+                  <span class="date">22 Feb 2026</span>
+                  <span class="time">10:00</span>
+                  <span class="venue">SuperSport Park</span>
+                </div>
+                <div class="fixture-teams">
+                  <div class="team home">
+                    <span class="team-name" style="background-image: url('images/teams/stellenbosch-fc.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; padding-left: 30px;">Stellenbosch FC</span>
+                  </div>
+                  <div class="vs">VS</div>
+                  <div class="team away">
+                    <span class="team-name" style="background-image: url('images/teams/richards-bay.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; padding-left: 30px;">Richards Bay</span>
+                  </div>
+                </div>
+                <div class="fixture-status upcoming">UPCOMING</div>
+              </div>
+              
+              <div class="fixture-card">
+                <div class="fixture-header">
+                  <span class="date">21 Feb 2026</span>
+                  <span class="time">14:00</span>
+                  <span class="venue">Newlands Cricket Ground</span>
+                </div>
+                <div class="fixture-teams">
+                  <div class="team home">
+                    <span class="team-name" style="background-image: url('images/teams/warriors.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; padding-left: 30px;">Warriors</span>
+                  </div>
+                  <div class="vs">VS</div>
+                  <div class="team away">
+                    <span class="team-name" style="background-image: url('images/teams/titans.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; padding-left: 30px;">Titans</span>
+                  </div>
+                </div>
+                <div class="fixture-status upcoming">UPCOMING</div>
+              </div>
+              
+              <div class="fixture-card">
+                <div class="fixture-header">
+                  <span class="date">22 Feb 2026</span>
+                  <span class="time">10:00</span>
+                  <span class="venue">SuperSport Park</span>
+                </div>
+                <div class="fixture-teams">
+                  <div class="team home">
+                    <span class="team-name" style="background-image: url('images/teams/cobras.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; padding-left: 30px;">Cobras</span>
+                  </div>
+                  <div class="vs">VS</div>
+                  <div class="team away">
+                    <span class="team-name" style="background-image: url('images/teams/knights.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; padding-left: 30px;">Knights</span>
+                  </div>
+                </div>
+                <div class="fixture-status upcoming">UPCOMING</div>
+              </div>
+              
+              <div class="fixture-card">
+                <div class="fixture-header">
+                  <span class="date">21 Feb 2026</span>
+                  <span class="time">14:00</span>
+                  <span class="venue">SuperSport Park</span>
+                </div>
+                <div class="fixture-teams">
+                  <div class="team home">
+                    <span class="team-name" style="background-image: url('images/teams/dolphins.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; padding-left: 30px;">Dolphins</span>
+                  </div>
+                  <div class="vs">VS</div>
+                  <div class="team away">
+                    <span class="team-name" style="background-image: url('images/teams/griquas.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; padding-left: 30px;">Griquas</span>
+                  </div>
+                </div>
+                <div class="fixture-status upcoming">UPCOMING</div>
+              </div>
+              
+              <div class="fixture-card">
+                <div class="fixture-header">
+                  <span class="date">21 Feb 2026</span>
+                  <span class="time">14:00</span>
+                  <span class="venue">SuperSport Park</span>
+                </div>
+                <div class="fixture-teams">
+                  <div class="team home">
+                    <span class="team-name" style="background-image: url('images/teams/royal-am.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; padding-left: 30px;">Royal AM</span>
+                  </div>
+                  <div class="vs">VS</div>
+                  <div class="team away">
+                    <span class="team-name" style="background-image: url('images/teams/imperial-los.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; padding-left: 30px;">Imperial Los</span>
+                  </div>
+                </div>
+                <div class="fixture-status upcoming">UPCOMING</div>
+              </div>
+              
+              <div class="fixture-card">
+                <div class="fixture-header">
+                  <span class="date">22 Feb 2026</span>
+                  <span class="time">10:00</span>
+                  <span class="venue">SuperSport Park</span>
+                </div>
+                <div class="fixture-teams">
+                  <div class="team home">
+                    <span class="team-name" style="background-image: url('images/teams/valencia.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; padding-left: 30px;">Valencia</span>
+                  </div>
+                  <div class="vs">VS</div>
+                  <div class="team away">
+                    <span class="team-name" style="background-image: url('images/teams/benfica.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; padding-left: 30px;">Benfica</span>
+                  </div>
+                </div>
+                <div class="fixture-status upcoming">UPCOMING</div>
+              </div>
+              
+              <div class="fixture-card">
+                <div class="fixture-header">
+                  <span class="date">21 Feb 2026</span>
+                  <span class="time">14:00</span>
+                  <span class="venue">SuperSport Park</span>
+                </div>
+                <div class="fixture-teams">
+                  <div class="team home">
+                    <span class="team-name" style="background-image: url('images/teams/mamelodi-sundowns.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; padding-left: 30px;">Mamelodi Sundowns</span>
+                  </div>
+                  <div class="vs">VS</div>
+                  <div class="team away">
+                    <span class="team-name" style="background-image: url('images/teams/marumo-gallants.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; padding-left: 30px;">Marumo Gallants</span>
+                  </div>
+                </div>
+                <div class="fixture-status upcoming">UPCOMING</div>
+              </div>
+              
+              <div class="fixture-card">
+                <div class="fixture-header">
+                  <span class="date">22 Feb 2026</span>
+                  <span class="time">10:00</span>
+                  <span class="venue">SuperSport Park</span>
+                </div>
+                <div class="fixture-teams">
+                  <div class="team home">
+                    <span class="team-name" style="background-image: url('images/teams/orlando-pirates.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; padding-left: 30px;">Orlando Pirates</span>
+                  </div>
+                  <div class="vs">VS</div>
+                  <div class="team away">
+                    <span class="team-name" style="background-image: url('images/teams/sekhukhune-united.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; padding-left: 30px;">Sekhukhune United</span>
+                  </div>
+                </div>
+                <div class="fixture-status upcoming">UPCOMING</div>
+              </div>
+              
+              <div class="fixture-card">
+                <div class="fixture-header">
+                  <span class="date">22 Feb 2026</span>
+                  <span class="time">10:00</span>
+                  <span class="venue">SuperSport Park</span>
+                </div>
+                <div class="fixture-teams">
+                  <div class="team home">
+                    <span class="team-name" style="background-image: url('images/teams/amasulu.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; padding-left: 30px;">Amazulu</span>
+                  </div>
+                  <div class="vs">VS</div>
+                  <div class="team away">
+                    <span class="team-name" style="background-image: url('images/teams/chippa-united.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; padding-left: 30px;">Chippa United</span>
+                  </div>
+                </div>
+                <div class="fixture-status upcoming">UPCOMING</div>
+              </div>
+              
+              <div class="fixture-card">
+                <div class="fixture-header">
+                  <span class="date">22 Feb 2026</span>
+                  <span class="time">10:00</span>
+                  <span class="venue">SuperSport Park</span>
+                </div>
+                <div class="fixture-teams">
+                  <div class="team home">
+                    <span class="team-name" style="background-image: url('images/teams/supersport-united.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; padding-left: 30px;">SuperSport United</span>
+                  </div>
+                  <div class="vs">VS</div>
+                  <div class="team away">
+                    <span class="team-name" style="background-image: url('images/teams/lions.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; padding-left: 30px;">Lions</span>
+                  </div>
+                </div>
+                <div class="fixture-status upcoming">UPCOMING</div>
+              </div>
+              
+              <div class="fixture-card">
+                <div class="fixture-header">
+                  <span class="date">22 Feb 2026</span>
+                  <span class="time">10:00</span>
+                  <span class="venue">SuperSport Park</span>
+                </div>
+                <div class="fixture-teams">
+                  <div class="team home">
+                    <span class="team-name" style="background-image: url('images/teams/stormers.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; padding-left: 30px;">Stormers</span>
+                  </div>
+                  <div class="vs">VS</div>
+                  <div class="team away">
+                    <span class="team-name" style="background-image: url('images/teams/bulls.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; padding-left: 30px;">Bulls</span>
+                  </div>
+                </div>
+                <div class="fixture-status upcoming">UPCOMING</div>
+              </div>
+              
+              <div class="fixture-card">
+                <div class="fixture-header">
+                  <span class="date">22 Feb 2026</span>
+                  <span class="time">10:00</span>
+                  <span class="venue">SuperSport Park</span>
+                </div>
+                <div class="fixture-teams">
+                  <div class="team home">
+                    <span class="team-name" style="background-image: url('images/teams/cheetahs.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; padding-left: 30px;">Cheetahs</span>
+                  </div>
+                  <div class="vs">VS</div>
+                  <div class="team away">
+                    <span class="team-name" style="background-image: url('images/teams/leopards.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; padding-left: 30px;">Leopards</span>
+                  </div>
+                </div>
+                <div class="fixture-status upcoming">UPCOMING</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="competition-section hidden-fixtures" id="moreFootballFixtures">
+            <h3>More PSL Fixtures</h3>
+            <div class="fixtures-list" id="moreFixturesList">
+              <!-- Additional PSL Fixtures -->
+              <div class="fixture-card">
+                <div class="fixture-header">
+                  <span class="date">24 Feb 2026</span>
+                  <span class="time">19:30</span>
+                  <span class="venue">Prince Magogo Stadium</span>
+                </div>
+                <div class="fixture-teams">
+                  <div class="team home">
+                    <span class="team-name" style="background-image: url('images/teams/polokwane-city.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; padding-left: 30px;">Polokwane City</span>
+                  </div>
+                  <div class="vs">VS</div>
+                  <div class="team away">
+                    <span class="team-name" style="background-image: url('images/teams/magesi-fc.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; padding-left: 30px;">Magesi FC</span>
+                  </div>
+                </div>
+                <div class="fixture-status upcoming">UPCOMING</div>
+              </div>
+              
+              <div class="fixture-card">
+                <div class="fixture-header">
+                  <span class="date">26 Feb 2026</span>
+                  <span class="time">20:00</span>
+                  <span class="venue">FNB Stadium</span>
+                </div>
+                <div class="fixture-teams">
+                  <div class="team home">
+                    <span class="team-name" style="background-image: url('images/teams/orlando-pirates.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; padding-left: 30px;">Orlando Pirates</span>
+                  </div>
+                  <div class="vs">VS</div>
+                  <div class="team away">
+                    <span class="team-name" style="background-image: url('images/teams/sekhukhune-united.png'); background-size: contain; background-repeat: no-repeat; background-position: left center; padding-left: 30px;">Sekhukhune United</span>
+                  </div>
+                </div>
+                <div class="fixture-status upcoming">UPCOMING</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Cricket Fixtures -->
+        <div class="sport-fixtures" data-sport="cricket">
+          <h2>🏏 Cricket Fixtures</h2>
+          
+          <div class="competition-section">
+            <h3>CSA T20 Challenge</h3>
+            <div class="fixtures-list">
+              <div class="fixture-card">
+                <div class="fixture-header">
+                  <span class="date">21 Feb 2026</span>
+                  <span class="time">14:00</span>
+                  <span class="venue">Newlands Cricket Ground</span>
+                </div>
+                <div class="fixture-teams">
+                  <div class="team home">
+                    <img src="images/teams/cobras.png" alt="Cobras" class="team-logo-img">
+                    <span class="team-name">Cobras</span>
+                  </div>
+                  <div class="vs">VS</div>
+                  <div class="team away">
+                    <img src="images/teams/titans.png" alt="Titans" class="team-logo-img">
+                    <span class="team-name">Titans</span>
+                  </div>
+                </div>
+                <div class="fixture-status upcoming">UPCOMING</div>
+              </div>
+              
+              <div class="fixture-card">
+                <div class="fixture-header">
+                  <span class="date">22 Feb 2026</span>
+                  <span class="time">10:00</span>
+                  <span class="venue">SuperSport Park</span>
+                </div>
+                <div class="fixture-teams">
+                  <div class="team home">
+                    <img src="images/teams/knights.png" alt="Knights" class="team-logo-img">
+                    <span class="team-name">Knights</span>
+                  </div>
+                  <div class="vs">VS</div>
+                  <div class="team away">
+                    <img src="images/teams/dolphins.png" alt="Dolphins" class="team-logo-img">
+                    <span class="team-name">Dolphins</span>
+                  </div>
+                </div>
+                <div class="fixture-status upcoming">UPCOMING</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Netball Fixtures -->
+        <div class="sport-fixtures" data-sport="netball">
+          <h2>🏐 Netball Fixtures</h2>
+          
+          <div class="competition-section">
+            <h3>Netball Cup</h3>
+            <div class="fixtures-list">
+              <div class="fixture-card">
+                <div class="fixture-header">
+                  <span class="date">23 Feb 2026</span>
+                  <span class="time">16:00</span>
+                  <span class="venue">Curtis Brown Centre</span>
+                </div>
+                <div class="fixture-teams">
+                  <div class="team home">
+                    <img src="images/teams/spar-proteas.png" alt="SPAR Proteas" class="team-logo-img">
+                    <span class="team-name">SPAR Proteas</span>
+                  </div>
+                  <div class="vs">VS</div>
+                  <div class="team away">
+                    <img src="images/teams/silver-ferns.png" alt="Silver Ferns" class="team-logo-img">
+                    <span class="team-name">Silver Ferns</span>
+                  </div>
+                </div>
+                <div class="fixture-status upcoming">UPCOMING</div>
+              </div>
+              
+              <div class="fixture-card">
+                <div class="fixture-header">
+                  <span class="date">24 Feb 2026</span>
+                  <span class="time">18:00</span>
+                  <span class="venue">Walter Sisulu University</span>
+                </div>
+                <div class="fixture-teams">
+                  <div class="team home">
+                    <img src="images/teams/king-proteas.png" alt="King Proteas" class="team-logo-img">
+                    <span class="team-name">King Proteas</span>
+                  </div>
+                  <div class="vs">VS</div>
+                  <div class="team away">
+                    <img src="images/teams/gems.png" alt="Gems" class="team-logo-img">
+                    <span class="team-name">Gems</span>
+                  </div>
+                </div>
+                <div class="fixture-status upcoming">UPCOMING</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>About SportsCentral Media</h4>
+        <p>Bringing you comprehensive coverage of football, rugby, cricket, and more from South Africa and beyond.</p>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="fixtures.html">Fixtures</a>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Contact Us</h4>
+        <div class="footer-icons">
+          <i class="fas fa-phone"></i> +27 69 444 1780
+        </div>
+        <div class="footer-icons">
+          <i class="fas fa-envelope"></i> sportscentralmedia@gmail.com
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Follow Us</h4>
+        <div class="footer-icons">
+          <a href="https://www.facebook.com/share/1XQNhoXr4e/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/sports_bunny15?igshid=bm54aW45emZuMHoz&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@sports_bunny5?_r=1&_t=ZS-94PWB6rGeu7" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="copyright">
+      &copy; 2026 SportsCentral Media. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- External JavaScript -->
+  <script src="script.js"></script>
+
+</body>
+</html>
